@@ -141,8 +141,8 @@ resource "aws_autoscaling_group" "master-eu-west-1c-masters-farrukhcluster-com" 
 resource "aws_autoscaling_group" "nodes-farrukhcluster-com" {
   name                 = "nodes.farrukhcluster.com"
   launch_configuration = "${aws_launch_configuration.nodes-farrukhcluster-com.id}"
-  max_size             = 2
-  min_size             = 2
+  max_size             = "${var.node_max_size}"
+  min_size             = "${var.node_min_size}"
   vpc_zone_identifier  = ["${aws_subnet.eu-west-1a-farrukhcluster-com.id}", "${aws_subnet.eu-west-1b-farrukhcluster-com.id}", "${aws_subnet.eu-west-1c-farrukhcluster-com.id}"]
 
   tag = {
