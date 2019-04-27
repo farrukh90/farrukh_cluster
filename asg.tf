@@ -221,7 +221,7 @@ resource "aws_launch_configuration" "master-eu-west-1a-masters-farrukhcluster-co
 resource "aws_launch_configuration" "master-eu-west-1b-masters-farrukhcluster-com" {
   name_prefix                 = "master-eu-west-1b.masters.farrukhcluster.com-"
   image_id                    = "ami-01666ac8d55438d0b"
-  instance_type               = "t2.micro"
+  instance_type               = "${var.master_instance_type}"
   key_name                    = "${aws_key_pair.kubernetes-farrukhcluster-com-efe05490095eb2e5e18da8280e9d1d68.id}"
   iam_instance_profile        = "${aws_iam_instance_profile.masters-farrukhcluster-com.id}"
   security_groups             = ["${aws_security_group.masters-farrukhcluster-com.id}"]
@@ -244,7 +244,7 @@ resource "aws_launch_configuration" "master-eu-west-1b-masters-farrukhcluster-co
 resource "aws_launch_configuration" "master-eu-west-1c-masters-farrukhcluster-com" {
   name_prefix                 = "master-eu-west-1c.masters.farrukhcluster.com-"
   image_id                    = "ami-01666ac8d55438d0b"
-  instance_type               = "t2.micro"
+  instance_type               = "${var.master_instance_type}"
   key_name                    = "${aws_key_pair.kubernetes-farrukhcluster-com-efe05490095eb2e5e18da8280e9d1d68.id}"
   iam_instance_profile        = "${aws_iam_instance_profile.masters-farrukhcluster-com.id}"
   security_groups             = ["${aws_security_group.masters-farrukhcluster-com.id}"]
