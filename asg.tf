@@ -10,6 +10,9 @@ resource "aws_autoscaling_group" "bastions-farrukhcluster-com" {
     key                 = "KubernetesCluster"
     value               = "farrukhcluster.com"
     propagate_at_launch = true
+    Env                 = "${var.Env}"
+    Created_by          = "${var.Created_by}"
+    Dept                = "${var.Dept}"
   }
 
   tag = {
