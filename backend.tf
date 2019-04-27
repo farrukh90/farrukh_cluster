@@ -6,8 +6,3 @@ terraform {
     region = "eu-west-1"
   }
 }
-
-
-#terraform = {
-  
-#}
