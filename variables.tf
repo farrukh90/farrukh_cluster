@@ -8,4 +8,6 @@ variable "Created_by" {}
 variable "Dept" {}
 variable "master_instance_type" {}
 variable "image_id" {}
+variable "aws_region" {}
+
 
