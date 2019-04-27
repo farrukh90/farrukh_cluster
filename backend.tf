@@ -1,4 +1,5 @@
 terraform {
+  required_version = ">= 0.9.3"
   backend "s3" {
     bucket = "farrukhcluster.com" 
     key = "state/farrukh_cluster"
@@ -7,6 +8,6 @@ terraform {
 }
 
 
-terraform = {
-  required_version = ">= 0.9.3"
-}
+#terraform = {
+  
+#}
