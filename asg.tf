@@ -2,8 +2,8 @@
 resource "aws_autoscaling_group" "bastions-farrukhcluster-com" {
   name                 = "bastions.farrukhcluster.com"
   launch_configuration = "${aws_launch_configuration.bastions-farrukhcluster-com.id}"
-  max_size             = 1
-  min_size             = 1
+  max_size             = "${var.bastion_max_size}"
+  min_size             = "${var.bastion_min_size}"
   vpc_zone_identifier  = ["${aws_subnet.utility-eu-west-1a-farrukhcluster-com.id}", "${aws_subnet.utility-eu-west-1b-farrukhcluster-com.id}", "${aws_subnet.utility-eu-west-1c-farrukhcluster-com.id}"]
 
   tag = {
